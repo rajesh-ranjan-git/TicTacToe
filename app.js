@@ -5,6 +5,7 @@ let reset = document.querySelector(".reset");
 let win = document.querySelector(".win-container");
 let winMsg = document.querySelector(".win p");
 let counter = 0;
+let temp = 0;
 let turn = true;
 
 let winPattern = [
@@ -31,30 +32,44 @@ const checkWinner = (msg) => {
 
         if (pos1 != "" && pos2 != "" && pos3 != "") {
             if (pos1 === pos2 && pos2 === pos3) {
-                winMsg.innerText = `Congratulations !! ${msg} is Winner...`;
-                console.log(msg);
+                winMsg.innerText = `${msg} won, Congratulations !`;
                 win.style.display = "block";
                 disableAll();
+                return "Won";
             }
         }
     }
 }
 
+const draw = () => {
+    if (win.style.display != "block" && counter == 9) {
+        winMsg.innerText = "Draw !";
+        win.style.display = "block";
+        disableAll();
+    }
+}
+
 boxes.forEach( (box) => {
     box.addEventListener("click", () => {
-        if (box.innerText == "") {
-            if (turn == true) {
-                box.innerText = "X";
-                turn = false;
-                checkWinner(box.innerText);
-            } else {
-                box.innerText = "O";
-                turn = true;
-                checkWinner(box.innerText);
-            }
+        if (counter != 9) {
+            counter++;
+            if (box.innerText == ""){
+                if (turn == true) {
+                    box.innerText = "X";
+                    turn = false;
+                    checkWinner(box.innerText);
+                } else {
+                    box.innerText = "O";
+                    turn = true;
+                    checkWinner(box.innerText);                    
+                }
+            } 
         }
+
+        draw();
     });
 });
+
 
 newGame.addEventListener("click", () => {
     window.location.reload();
