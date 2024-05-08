@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    padding: 8vh;
+    text-align: center;
+    background-color: azure;
+}
+
+button {
+    margin: 20px;
+    padding: 20px;
+    width: 150px;
+    font-size: 20px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.game {
+    margin: 50px;
+    width: 60vh;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    color: blueviolet;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.winner {
+    display: none;
+    padding: 30px;
+    height: 8vh;
+    position: absolute;
+    font-size: 50px;
+    background-color: bisque;
+    top: 40%;
+    right: 33%;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
