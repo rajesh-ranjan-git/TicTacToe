@@ -8,6 +8,10 @@ body {
     padding: 8vh;
     text-align: center;
     background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 button {
@@ -58,15 +62,23 @@ button {
     justify-content: center;
 }
 
-.winner {
+.win-container {
     display: none;
+}
+
+.winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 78vh;
+}
+
+.win {
     padding: 30px;
     height: 8vh;
-    position: absolute;
     font-size: 50px;
     background-color: bisque;
-    top: 40%;
-    right: 31.15%;
     border-radius: 10px;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     z-index: 2;

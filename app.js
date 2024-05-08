@@ -2,8 +2,8 @@ let container = document.querySelector(".container");
 let boxes = document.querySelectorAll(".box");
 let newGame = document.querySelector(".new");
 let reset = document.querySelector(".reset");
-let winner = document.querySelector(".winner");
-let winMsg = document.querySelector(".winner p");
+let win = document.querySelector(".win-container");
+let winMsg = document.querySelector(".win p");
 let counter = 0;
 let turn = true;
 
@@ -19,11 +19,6 @@ let winPattern = [
 ];
 
 const disableAll = () => {
-    winner.style.opacity = 1;
-    reset.style.opacity = 0.5;
-    for (let i=0; i<9; i++) {
-        boxes[i].style.opacity = 0.5;
-    }
     container.style.display = "none";
     reset.style.display = "none";
 }
@@ -38,7 +33,7 @@ const checkWinner = (msg) => {
             if (pos1 === pos2 && pos2 === pos3) {
                 winMsg.innerText = `Congratulations !! ${msg} is Winner...`;
                 console.log(msg);
-                winner.style.display = "block";
+                win.style.display = "block";
                 disableAll();
             }
         }
