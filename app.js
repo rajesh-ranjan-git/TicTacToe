@@ -1,6 +1,6 @@
+let container = document.querySelector(".container");
 let boxes = document.querySelectorAll(".box");
-let newGame1 = document.querySelector(".new1");
-let newGame2 = document.querySelector(".new2");
+let newGame = document.querySelector(".new");
 let reset = document.querySelector(".reset");
 let winner = document.querySelector(".winner");
 let winMsg = document.querySelector(".winner p");
@@ -18,6 +18,16 @@ let winPattern = [
     [6, 7, 8]
 ];
 
+const disableAll = () => {
+    winner.style.opacity = 1;
+    reset.style.opacity = 0.5;
+    for (let i=0; i<9; i++) {
+        boxes[i].style.opacity = 0.5;
+    }
+    container.style.display = "none";
+    reset.style.display = "none";
+}
+
 const checkWinner = (msg) => {
     for (pattern of winPattern) {
         let pos1 = boxes[pattern[0]].innerText;
@@ -26,9 +36,10 @@ const checkWinner = (msg) => {
 
         if (pos1 != "" && pos2 != "" && pos3 != "") {
             if (pos1 === pos2 && pos2 === pos3) {
-                winMsg.innerText = `Congratulations !! ${msg} won....`;
+                winMsg.innerText = `Congratulations !! ${msg} is Winner...`;
                 console.log(msg);
                 winner.style.display = "block";
+                disableAll();
             }
         }
     }
@@ -36,14 +47,12 @@ const checkWinner = (msg) => {
 
 boxes.forEach( (box) => {
     box.addEventListener("click", () => {
-        if (turn == true) {
-            if (box.innerText == "") {
+        if (box.innerText == "") {
+            if (turn == true) {
                 box.innerText = "X";
                 turn = false;
                 checkWinner(box.innerText);
-            }
-        } else {
-            if (box.innerText == "") {
+            } else {
                 box.innerText = "O";
                 turn = true;
                 checkWinner(box.innerText);
@@ -52,11 +61,7 @@ boxes.forEach( (box) => {
     });
 });
 
-newGame1.addEventListener("click", () => {
-    window.location.reload();
-});
-
-newGame2.addEventListener("click", () => {
+newGame.addEventListener("click", () => {
     window.location.reload();
 });
 

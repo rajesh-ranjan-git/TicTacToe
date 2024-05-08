@@ -56,7 +56,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .winner {
@@ -67,7 +66,8 @@ button {
     font-size: 50px;
     background-color: bisque;
     top: 40%;
-    right: 33%;
+    right: 31.15%;
     border-radius: 10px;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
