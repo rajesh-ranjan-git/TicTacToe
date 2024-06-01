@@ -20,7 +20,7 @@ button {
     width: 150px;
     font-size: 20px;
     border: none;
-    background-color: blueviolet;
+    background-color: rgb(69, 9, 126);
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -49,11 +49,11 @@ button {
     margin: 10px;
     width: 150px;
     height: 150px;
-    background-color: aquamarine;
+    background-color: rgb(25, 226, 159);
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-    color: blueviolet;
+    color: rgb(69, 9, 126);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     text-align: center;
