@@ -1,85 +1,177 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 body {
-    padding: 8vh;
-    text-align: center;
-    background-color: azure;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  padding: 8vh;
+  text-align: center;
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 button {
-    margin: 20px;
-    padding: 20px;
-    width: 150px;
-    font-size: 20px;
-    border: none;
-    background-color: rgb(69, 9, 126);
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  padding: 20px;
+  width: 150px;
+  font-size: 20px;
+  border: none;
+  background-color: rgb(69, 9, 126);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .game {
-    margin: 50px;
-    width: 60vh;
-    height: 55vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  margin: 50px;
+  width: 60vh;
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .box {
-    margin: 10px;
-    width: 150px;
-    height: 150px;
-    background-color: rgb(25, 226, 159);
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-    color: rgb(69, 9, 126);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(25, 226, 159);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  color: rgb(69, 9, 126);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .win-container {
-    display: none;
+  display: none;
 }
 
 .winner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 78vh;
 }
 
 .win {
-    padding: 30px;
-    height: 8vh;
-    font-size: 50px;
-    background-color: bisque;
-    border-radius: 10px;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-    z-index: 2;
+  padding: 30px;
+  height: 8vh;
+  font-size: 50px;
+  background-color: bisque;
+  border-radius: 10px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+sounds {
+  display: none;
+}
+
+.loading {
+  display: none;
+  margin: 15%;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  display: inline-grid;
+  width: 80px;
+  aspect-ratio: 1;
+  animation: l11-0 3s linear infinite;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+}
+
+.loader:before {
+  clip-path: polygon(
+    100% 50%,
+    83.81% 59.06%,
+    93.3% 75%,
+    74.75% 74.75%,
+    75% 93.3%,
+    59.06% 83.81%,
+    50% 100%,
+    40.94% 83.81%,
+    25% 93.3%,
+    25.25% 74.75%,
+    6.7% 75%,
+    16.19% 59.06%,
+    0% 50%,
+    16.19% 40.94%,
+    6.7% 25%,
+    25.25% 25.25%,
+    25% 6.7%,
+    40.94% 16.19%,
+    50% 0%,
+    59.06% 16.19%,
+    75% 6.7%,
+    74.75% 25.25%,
+    93.3% 25%,
+    83.81% 40.94%
+  );
+  background: #1b325f;
+  transform: rotate(0turn) translate(-12.5%) rotate(0turn);
+  animation: l11-1 2s linear infinite;
+}
+
+.loader:after {
+  margin: 12.5%;
+  clip-path: polygon(
+    100% 50%,
+    78.19% 60.26%,
+    88.3% 82.14%,
+    65% 75.98%,
+    58.68% 99.24%,
+    44.79% 79.54%,
+    25% 93.3%,
+    27.02% 69.28%,
+    3.02% 67.1%,
+    20% 50%,
+    3.02% 32.9%,
+    27.02% 30.72%,
+    25% 6.7%,
+    44.79% 20.46%,
+    58.68% 0.76%,
+    65% 24.02%,
+    88.3% 17.86%,
+    78.19% 39.74%
+  );
+  background: #9cc4e4;
+}
+
+@keyframes l11-0 {
+  to {
+    rotate: 1turn;
+  }
+}
+
+@keyframes l11-1 {
+  to {
+    transform: rotate(-1turn) translate(-12.5%) rotate(0.75turn);
+  }
 }
