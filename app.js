@@ -74,11 +74,11 @@ boxes.forEach((box) => {
           box.innerText = "X";
           box.style.color = "red";
           turn = false;
-          checkWinner(box.innerText);
+          click_check = checkWinner(box.innerText);
         } else {
           box.innerText = "O";
           turn = true;
-          checkWinner(box.innerText);
+          click_check = checkWinner(box.innerText);
         }
       }
     }
